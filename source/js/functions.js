@@ -252,10 +252,25 @@ var backOneLevel = (function(){
 * Hook and animation
 */
 
-$('.back-to-top, .squiggle').click(function(){
-    $('html, body').animate({scrollTop : 0},800);
-    return false;
-});
+var backTop = (function() {
+    $('.back-to-top, .squiggle').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+})();
+
+/***********************************************
+ * Random backgrounds
+ ***********************************************/
+
+/**
+* Change backgrounds on refresh
+*/
+
+var randomBg = (function() {
+    var images = ['bg-x1200-restaurant-tables.jpg', 'bg-x1200-restaurant-long-table.jpg'];
+    $('#main-bg').css({'background-image': 'url(../assets/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+})();
 
 
     }); // end of document ready

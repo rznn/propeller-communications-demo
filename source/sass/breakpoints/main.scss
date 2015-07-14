@@ -502,7 +502,9 @@ nav {
     position: fixed;
     height:100%;    
     width:100%;
-
+    
+    // CSS fallback if js random bg image function does not work
+    // or js is disabled
     background: url(../images/bg-x1200-restaurant-tables.jpg) center center no-repeat fixed;
     background-size: cover;
 }
