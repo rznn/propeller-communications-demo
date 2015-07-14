@@ -625,7 +625,7 @@ var backTop = (function() {
 
 var randomBg = (function() {
     var images = ['bg-x1200-restaurant-tables.jpg', 'bg-x1200-restaurant-long-table.jpg'];
-    $('#main-bg').css({'background-image': 'url(/assets/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+    $('#main-bg').css({'background-image': 'url(../public/assets/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
 })();
 
 
