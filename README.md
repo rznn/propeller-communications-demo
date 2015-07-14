@@ -35,6 +35,8 @@ In regards to the form validation, I opted for a mix of native HTML constraints 
 ##Extras
 Should you not wish to complete the form, you can also access the [thank-you](http://rawgit.com/rznn/propeller-communications-demo/master/public/thank-you.html) page from here. As you can probably tell by now, I had quite a lot of fun with this project and I do like giving a little bit of my "umph" to everything I do.
 
+*Edit* 14.07.15. One of the things I did not fully understand in the original design were the two backgrounds with a black gap between. It certainly wasn't a design choice, so I figured either they were there to get a better feeling for the website or options to choose from. I decided to make a random background generator instead (hit refresh a few times, no cookies used).
+
 ##W3C Validation
 The project reaches [100% HTML validation](https://validator.w3.org/nu/?doc=http%3A%2F%2Frznart.com%2Fwork%2Fpropeller-demo%2F) according to W3C Nu HTML Checker.
 
