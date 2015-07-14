@@ -1,0 +1,27 @@
+
+/* Large Devices, Wide Screens */
+
+body { font-size: 1.6rem; }
+
+h3 { font-size: 2.4em; }
+
+.logo {
+    padding: 10% 0 5% 0;
+
+    img {
+        max-width: 280px;
+    }
+}
+
+.social-links.social-header {
+    margin-top: 0;
+    padding: 5% 0 10% 0;
+}
+
+#subscribe-form {
+    padding-top: 10px;
+}
+
+.modal .modal-inner .pre-phase span {
+    font-size: 3em;
+}

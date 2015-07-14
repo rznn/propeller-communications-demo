@@ -1,0 +1,325 @@
+
+/* Medium Devices, Desktops */
+
+// Hide mobile-specific elements
+#btn-toggle,
+#content-darken,
+.back-to-top,
+.social-links.social-mobile.social-footer {
+    display: none;
+}
+
+// From top to bottom logical
+.modal {
+    .modal-inner span { font-size: 4.4em; }
+    
+    .propeller {
+        width: 20%;
+        padding: 20%;
+    }
+
+    #pre-skip { font-size: 1.4em; }
+
+}
+
+body { font-size: 1.4rem; }
+
+/* We can now lighten up the background a bit to compensate
+with the implementation of the diagonal pattern on high res devices */
+#main-bg.tint:before {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#main-bg:after { 
+    z-index: -1;   
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+
+    background-image: repeating-linear-gradient(
+        135deg,
+        rgba(128,128,128,.5),
+        rgba(128,128,128,.5) 1px,
+        transparent 2px,
+        transparent 2px,
+        rgba(128,128,128,.5) 3px
+    );
+    background-size: 4px 4px;
+}
+
+
+/* Header */
+
+header {
+    position: relative;
+    height: auto;
+    background: none;
+}
+
+.logo {
+    display: block;
+    float: none;
+    padding: 5% 0 3% 0;
+    height: auto;
+    width: auto;
+
+    img {
+        position: relative;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+        max-width: 75%;
+    }
+
+    span { display: none; }
+}
+
+
+/* Navigation */
+
+nav {
+    display: block;
+    float: none !important;
+
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+
+    transition: all 0.1s ease-in-out;
+}
+
+nav a { color: #fff; }
+
+nav.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+
+    .nav li a {
+        color: $darkest-grey;
+    }
+}
+
+.nav {
+    display: block !important;
+    position: relative;
+    left: 0 !important;
+    top: auto;
+
+    box-shadow: none;
+    text-align: center;
+    background: none;
+}
+
+// Level 0
+.nav li {
+    display: inline-block;
+    position: relative;
+    float: none;
+}
+
+// Level 1
+.nav li ul {
+    display: none;
+    top: auto;
+    left: 0;
+    width: 180px;
+
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+// Show submenus on hover
+.nav li.hover ul {
+    display: block;
+}
+
+.nav li ul li {
+    display: block;
+    text-align: left;
+}
+
+.nav li ul li ul {
+    top: 0;
+    left:100%;
+}
+
+// Level 2
+.nav li.hover ul li ul {
+    display: none;
+    top: 0;
+    left: 100%;
+}
+
+.nav li.hover ul li.hover ul {
+    display: block;
+}
+
+/* Misc nav */
+
+// Hide back button
+.nav li .back {
+    display: none;
+}
+
+// Color palette
+
+.nav li ul li a {
+    padding: 10px 20px;
+    font-size: 0.875em;
+}
+
+.nav li a {
+    background: none;
+}
+
+.nav li:hover {
+    background: transparent;
+}
+
+.nav li.hover a:hover {
+    color: $gold;
+}
+
+.nav li li a,
+.nav li li li a {
+    z-index: 100;
+    display: block;
+    background-color: #fff;
+    position: relative;
+    border-top: 1px solid $gold;
+    border-top: none;
+    color: $darkest-grey;
+}
+
+// Submenu indicators
+
+.nav li > a.parent:after,
+.nav li > a.parent:hover:after {
+    padding-left: 5px;
+    content: '\f078';
+}
+
+.nav li li a.parent:after,
+.nav li li a.parent:hover:after {
+    content: '\f054';
+}
+
+/* END navigation */
+
+.lead {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h3 {
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.restaurant-discover .btn-cta {
+    opacity: 0;
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .cta-wrapper { width: 50%; }
+}
+
+#connect .instagram .row { 
+    width: 100%;
+}
+
+#subscribe-form {
+    padding-top: 50px;
+
+    .input-wrapper {
+        label { width: 35%; }
+
+        .field-container {
+            width: 45%;
+            .field-1-2:after { margin-right: 10%; }
+        }
+    }
+}
+
+footer {
+    max-width: 95%;
+    margin: 0 auto;
+    padding-bottom: 2%;
+    border-top: 3px double #fff;
+    text-align: center;
+
+    .footer-wrapper ul li {
+        display: inline-block;
+        padding: 0 1%;
+        border-right: 1px solid #fff;
+        line-height: 1; // to constrain the border height
+        font-size: 0.875em;
+
+        &:nth-child(1) {
+            padding-bottom: 0;
+            font-size: initial;
+            font-weight: normal;
+        }
+
+        &:nth-last-child(1) { border: none; }
+
+
+    }
+
+    .footer-wrapper {
+      padding: 2% 0 2% 0;
+    }
+    
+    .squiggle.mobile { display: none; }
+    .squiggle.large { display: inline-block; }
+}
+
+/* Social */
+.social-links {
+
+    &.social-header {
+        margin-top: 0;
+        padding: 2.5% 0 5% 0;
+
+        img { max-height: 48px; }
+    }
+
+    &.social-links.social-large-devices {
+        display: inline-block;
+        width: auto;
+        padding: 0 1%;
+
+        a.social-icon {
+            padding: 0;
+            text-decoration: none;
+
+            .fa { font-size: 1.2em; }
+        }
+
+    }
+
+    // Footer social icons only visible on large screens
+    a .fa {
+        padding: 0 10px;
+        color: #fff;
+
+        transition: all .1s ease-in-out;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+}

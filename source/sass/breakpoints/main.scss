@@ -1,0 +1,1049 @@
+/*
+Project Name: Propeller Communications - Demo
+Author: Razvan Negrea
+Author URI: http://www.rznart.com
+Description: Start your engines!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# GENERAL STYLES
+# FONT STYLES
+  ## Main Styles
+  ## Link Styles
+# CONTAINERS
+# PRELOADER
+# HEADER
+  ## Navigation
+# CONTENT
+  ## Social Media
+  ## Restaurant CTAs
+  ## Carousel
+  ## Connect
+# FOOTER
+# PAGES
+  ## Thank you page
+# CLEARINGS
+# ACCESSIBILITY
+# MISC
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+
+#GENERAL STYLES
+
+--------------------------------------------------------------*/
+
+* { padding: 0; margin: 0; }
+
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+    width: 100%;
+    color: $darkest-grey;
+}
+
+// Reset elements
+dl, menu, ol, ul {
+    margin: 0;
+}
+
+// Words of wisdom from Paul Irish!
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+li { list-style-type:none; } // remove bullet points
+
+// Change or remove Chrome's yellow highlight when autocomplete is on
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100rem white inset;
+}
+
+/*** Change default text highlight ***/
+
+/* IE9  - Also picked up by most modern browsers */
+*::selection {
+  background:$selection-highlight;
+  color:#FFF;
+  text-shadow:none;
+}
+/* Safari & Chrome - Webkit Rendering */
+*::-webkit-selection {
+  background:$selection-highlight;
+  color:#FFF;
+  text-shadow:none;
+}
+/* Mozilla based - Gecko Rendering */ 
+*::-moz-selection {
+  background:$selection-highlight;
+  color:#FFF;
+  text-shadow:none;
+}
+
+/*--------------------------------------------------------------
+
+#FONT STYLES
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+##Main Styles
+--------------------------------------------------------------*/
+// Set base font-size to 10px
+html {
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 62.5%;
+    -ms-text-size-adjust: 62.5%;
+    font-family: sans-serif;
+}
+
+// Set actual font-size to 12px without affecting user's personal browser settings
+// and also have a 10px base that you can base your margins on with rem
+// Ex. margin: 2rem = 20px, instead of calculating from 12px or having a fixed
+// px margin
+
+// Since the body font is set to 16px, you can go and use that as base size
+// inside a type-scale calculator
+
+// px for borders or things that go under 1 rem
+// rem for margins
+// em for font
+// % for divs and everything else (more responsive)
+
+// Using 1.414 Augmented Forth - find it here http://type-scale.com/
+
+body { font-size: 1.2rem; } // MODIFY TO 1.6 16px
+
+body {
+    background-color: white;
+    font-family: 'Vollkorn', garamond, arial, serif;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+p {
+    margin-bottom: 1.3em;
+    font-size: 1.25em;
+    font-style: italic;
+}
+
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+
+h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    font-family: 'Lato', helvetica, arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em; // 47px
+}
+
+h2 {font-size: 2.827em;} // 33px
+
+h3 {font-size: 1.999em;} // 23px
+
+h4 {font-size: 1.414em;} // 16px
+
+.font-large { font-size: 1.375em; } // 16px
+
+small, .font-small {font-size: 0.707em;}
+
+hr { margin: 10px 0; }
+
+/*--------------------------------------------------------------
+##Link Styles
+--------------------------------------------------------------*/
+
+a {
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+
+#CONTAINERS
+
+--------------------------------------------------------------*/
+
+#main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+
+#PRELOADER
+
+--------------------------------------------------------------*/
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+
+    .modal-inner {
+        position: relative;
+        @extend %vh-align;
+        text-align: center;
+
+        // Hide ...
+        .pre-phase {
+            display: none;
+
+            span {
+                opacity: 0;
+                font-size: 1.75em;
+                font-style: italic;
+            }
+
+            .countdown, .ellipsis { display: inline; }
+        }
+    }
+}
+
+.propeller {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 40%;
+    opacity: 0.2;
+
+    box-sizing: border-box;
+
+    background: url(../images/propeller-outline.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:100% auto;
+}
+// Skip preloader button
+#pre-skip {
+    display: block;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 2% ;
+
+    text-align: center;
+
+    a {
+        display: inline;
+        width: 50%;
+        padding: 2.5% 5%;
+
+        color: #ccc;
+        font-style: italic;
+        text-decoration: none;
+        cursor: pointer;
+
+        transition: color 0.2s ease-in-out;
+
+        &:hover { color: $gold; }
+    }
+}
+
+
+/*--------------------------------------------------------------
+
+#HEADER
+
+--------------------------------------------------------------*/
+
+header {
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 100%;
+
+    background-color: $darkest-grey;
+
+    img {
+        height: 35px;
+    }
+}
+
+.logo {
+    display: inline-block;
+    float: left;
+    height: 100%;
+
+    a {
+        position: relative;
+        display: inline-block;
+        @extend %h-align;
+        height: 100%;
+
+        text-decoration: none;
+    }
+
+    img {
+        position: relative;
+        @extend %v-align;
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        height: 35px;
+        margin-top: -10px;
+        padding: 0 10px;
+        
+        color: #fff;
+        font-family: 'Lato', helvetica, arial, sans-serif;
+        font-weight: 700;
+        font-size: 1.6em;
+    }
+}
+
+/*--------------------------------------------------------------
+##Navigation
+--------------------------------------------------------------*/
+
+nav {
+    display: inline-block;
+    // Fixes toggle button collapsing upon window resize
+    // between small and medium device width
+    float: right !important;
+    min-height: 45px;
+
+    a {
+        color: $gold;
+
+        &:hover {
+            color: #fff;
+            background: $gold;
+        }
+    }
+
+    li {
+        z-index: 1000;
+        display: block;
+    }
+
+    ul {
+        background: #fff;
+        // Shadow under menu
+        box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+}
+
+// Menu (ul.nav) styles
+.nav {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+
+    list-style: none;
+
+    *zoom: 1; /* fix for IE 6-8 not toggling button */
+}
+
+.nav a {
+    padding: 20px;
+
+    font-family: 'Lato', helvetica, arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    *zoom: 1;
+}
+
+// Level 0
+.nav ul {
+    // Hide dropdown menu by default
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+// Level 1
+.nav li ul {
+    top: 0;
+    left: 100%;
+}
+
+// Level 2
+.nav li ul li ul {
+    // display: block !important;
+    left: 100%;
+}
+
+// Level 0
+.nav li a {
+    display: block;
+}
+
+// Level 1
+.nav li li a {
+    z-index:100;
+    // display: block;
+    // background: $gold;
+    position: relative;
+
+    border-top: 1px solid $gold;
+}
+
+// Add chevrons to submenus to let the viewer
+// know if they can go deeper
+.nav li > a.parent {
+
+    &:after {
+        float: right;
+
+        font-family: FontAwesome;
+        content: '\f054';
+    }
+
+    &:hover:after {
+        font-family: FontAwesome;
+        content: '\f054';
+    }
+
+    &:only-child:after {
+        content: '';
+    }
+}
+
+// Mobile menu toggle button
+#btn-toggle {
+    display: inline-block;
+    float: right;
+    padding: 5px 10px;
+
+    color: #fff;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+// Back to previous menu level
+.nav li.back {
+    text-align: center;
+
+    & > a { font-weight: bold; }
+
+    & > a:after {
+        font-family: FontAwesome;
+        content: '\f053';
+        float: left;
+    }
+}
+
+// Overlay activated on mobile menu expansion
+#content-darken {
+    // Place darken underneath the nav
+    z-index: 998;
+    // Overlay is turned off by default
+    display: none;
+
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+/*--------------------------------------------------------------
+
+#CONTENT
+
+--------------------------------------------------------------*/
+
+#main-bg {
+    // Send background to the back
+    z-index: -1;
+    position: fixed;
+    height:100%;    
+    width:100%;
+
+    background: url(../images/bg-x1200-restaurant-tables.jpg) center center no-repeat fixed;
+    background-size: cover;
+}
+
+#main-content {
+    background-color: #fff;
+    text-align: center;
+}
+
+.lead {
+    padding: 5%;
+
+    h2 { padding: 5% 0; }
+}
+
+/*--------------------------------------------------------------
+##Social Media
+--------------------------------------------------------------*/
+
+.social-links {
+    display: inline-block;
+}
+
+// Hide social-links on small screens
+.social-links.social-large-devices {
+    display: none;
+}
+
+// Different template for mobile view
+.social-links {
+    width: 100%;
+    padding: 5%;
+    text-align: center;
+
+    a { text-decoration: none; }
+
+    &.social-header {
+        margin-top: 45px;
+    }
+
+    &.social-footer {
+        background-color: $darkest-grey;
+    }
+
+    .social-icon {
+        float:none;
+
+        &>img {
+            max-width: 15%;
+        }
+    }
+}
+
+// Social icons styling and animation
+.social-icon {
+    padding: 0 10px;
+}
+
+.social-icon .icon-circle {
+    position: relative;
+    width:48px;
+    height:48px;
+    border: 2px solid #fff;
+    border-radius:100%;
+    line-height:44px; // -2 -2 border width
+    text-align:center;
+    vertical-align:middle;
+    display:inline-block;
+
+    transition: background 0.2s, color 0.2s;
+
+    .fa {
+        font-size: 28px;
+        line-height: inherit;
+    }
+
+    // Rollover animation
+    &:hover {
+        border-color: $light-gold;
+        background-color: $light-gold;
+
+        .fa {
+            color: #fff;
+        }
+    }
+
+    &:after {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        content: '';
+        box-sizing: content-box;
+
+        top: -7px;
+        left: -7px;
+        padding: 7px;
+
+        top: 0; left: 0; padding: 0;
+        
+        border-color: $light-gold;
+        box-shadow: 0 0 0 4px $light-gold;
+        transition: transform 0.2s, opacity 0.2s;
+        transform: scale(1.3);
+        opacity: 0;
+    }
+
+    &:hover:after {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*--------------------------------------------------------------
+##Restaurant CTAs
+--------------------------------------------------------------*/
+
+.restaurant-discover {
+    // Fix 0 height div caused by floated content inside
+    overflow: auto;
+
+    .col-1-4 {
+        float:left;
+        position: relative;
+        // Collapsing in two rows for mobile devices
+        width: 50%;
+        padding: 0;
+
+        overflow: hidden;
+        box-sizing: border-box;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .cta-bg {
+        // Due to the high specificity implied by the selector nth-child
+        // the background sizes need to be declared as !important
+        padding: 50%;
+
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background-size: 110% !important;
+        }
+    }
+
+    .col-1-4:nth-child(1) a .cta-bg { background: url(../images/cta-table.jpg) center center no-repeat; background-size: 100%;}
+    .col-1-4:nth-child(2) a .cta-bg { background: url(../images/cta-chips-and-sub.jpg) center center no-repeat; background-size: 100%;}
+    .col-1-4:nth-child(3) a .cta-bg { background: url(../images/cta-liquor-glass.jpg) center center no-repeat; background-size: 100%;}
+    .col-1-4:nth-child(4) a .cta-bg { background: url(../images/cta-coffee-and-sugar-jar.jpg) center center no-repeat; background-size: 100%;}
+
+
+    .cta-wrapper {
+        position: absolute;
+        width: 75%;
+
+        img {
+            height: 25%;
+            width: 40%;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+##Carousel
+--------------------------------------------------------------*/
+
+ul.carousel {
+    position:relative;
+    list-style:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    display:none;
+}
+
+li.carousel-slide {
+    position:absolute;
+    display:none;
+}
+
+ul.carousel li {
+    width: 100%;
+    background-size:100% auto !important;
+
+    &:nth-child(2) { background: url(../images/carousel-x1200-thank-you.jpg) center center no-repeat; }
+    &:nth-child(3) { background: url(../images/carousel-x1200-london-england-great-britain.jpg) bottom center no-repeat; }
+    &:nth-child(4) { background: url(../images/carousel-x1200-flower-rich-restaurant.jpg) bottom center no-repeat; }
+    &:nth-child(5) { background: url(../images/carousel-x1200-restaurant-tables-with-sea-view.jpg)  center no-repeat; }
+    &:nth-child(6) { background: url(../images/carousel-x1200-dining-table.jpg) center center no-repeat; }
+    &:nth-child(7) { background: url(../images/carousel-x1200-restaurant-at-night.jpg) center center no-repeat; }
+    &:nth-child(8) { background: url(../images/carousel-x1200-glasses-restaurant.jpg) center center no-repeat; }
+}
+
+/* Controls */
+
+ul.carousel-controls { 
+    list-style:none;
+    margin:0;
+    padding:0;
+    z-index:9999;
+}
+
+ul.carousel-controls li {
+
+    a {
+        z-index: 1;
+        display:block;
+        position:absolute;
+        @extend %v-align;
+        padding: 14px 18px;
+
+        background: rgba(255,255,255,0.7);
+        color:#000;
+        text-decoration: none;
+        font-size: 1.375em;
+        line-height: 1;
+
+        transition: background 0.2s ease-in-out;
+
+        &:hover{
+            background:rgba(255,255,255,1);
+        }
+    }
+
+    &.carousel-next a { right:2%; }
+
+    &.carousel-prev a { left:2%; }
+}
+
+/* Indicators */
+
+ol.carousel-indicators {
+    z-index: 1;
+    position: absolute;
+    bottom: 5%;
+    padding: 0;
+    width:100%;
+    list-style: none;
+    text-align: center;
+}
+
+ol.carousel-indicators li  {
+    display:inline;
+
+    a {
+        display:inline-block;
+        margin:5px;
+        padding:5px 5px;
+        
+        background:#fff;
+        text-decoration: none;
+
+        transition: all .1s ease-in-out;
+
+        &:hover {
+            background: $gold;
+        }
+
+        &:active {
+            background: $dark-gold;
+        }
+    }
+
+    // Animate currently active indicator
+    &.active-marker a {
+        transform: rotate(45deg);
+    }
+
+}
+
+/*--------------------------------------------------------------
+#CONNECT
+--------------------------------------------------------------*/
+
+#connect {
+    position: relative;
+    overflow: auto;
+    color: #fff;
+
+    .row {
+    // Fixes tint overlap
+        z-index: 10;
+        position: relative;
+
+        .cta {
+            padding: 0 10px;
+
+            .cta-wrapper {
+                max-width: 300px;
+                margin: 0 auto;
+                
+                p.font-large { margin: 0; }
+            }
+
+            &.instagram {
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                .col-1-2:nth-child(1) {
+                    padding-left: 0;
+                }
+
+                .col-1-2:nth-child(2) {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+
+#FOOTER
+
+--------------------------------------------------------------*/
+
+footer {
+    margin-top: 5%;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: 'Lato', helvetica, arial, sans-serif;
+
+    .footer-wrapper {
+        padding: 5% 10%;
+    }
+
+    .footer-wrapper li {
+        text-align: center;
+        text-decoration: none;
+
+        &:nth-child(1) {
+            padding-bottom: 1%;
+            font-size: 1.375em;
+            font-weight: bold;
+        }
+        
+    }
+
+    .back-to-top {
+        padding: 5% 0;
+
+        background-color: $dark-grey;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        a { text-decoration: none; }
+    }
+}
+
+
+// Different styles so we don't have to traverse DOM
+// to move the div up or down
+.squiggle.large { display: none; }
+
+
+/*--------------------------------------------------------------
+
+#PAGES
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+#Thank you page
+--------------------------------------------------------------*/
+
+body.thank-you #main-content {
+    margin-bottom: 10%;
+
+    a { 
+        color: $darkest-grey;
+
+        &:hover { color: $gold; }
+
+        &.btn-ghost {
+            border-color: $darkest-grey;
+        }
+    }
+
+    .offer {
+        position: relative;
+        margin-bottom: 1.3em;
+        width: 100%;
+        padding: 34% 50%;
+
+        background: url(../images/offer-wine-bottles.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size:100% auto;
+
+        .offer-wrapper {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+
+            background-color: rgba(255, 255, 255, 0.7);
+
+            p {
+              color: $brown;                
+              margin: 0;
+
+                &.offer-date {
+                    padding-top: 2%;
+                    font-family: 'Lato', helvetica, arial, sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 1.25em;
+                }
+
+                &.offer-cta {
+                    padding: 2%;
+                }
+            }
+        }
+    }
+
+    ul.cta-list {
+        padding-bottom: 5%;
+        
+        li.cta {
+            display: inline;
+
+            a { 
+                padding: 0 2%;
+                font-size: 1.25em;
+                font-style: normal;
+                font-family: 'Lato', helvetica, arial, sans-serif;
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+
+#CLEARINGS
+
+--------------------------------------------------------------*/
+
+.clearfix:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+/*--------------------------------------------------------------
+
+#ACCESSIBILITY
+
+--------------------------------------------------------------*/
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*--------------------------------------------------------------
+
+#MISC
+
+--------------------------------------------------------------*/
+
+.center {
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+// Tint images on hover
+.tint:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: none;
+    transition: all .2s ease-in-out;
+}
+
+// Tint is turned on by default for mobile devices
+// since they do not support hover states
+// :focus is not really a solution in this case
+
+.tint:before {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+// Horizontal rule for the "thank you" page
+
+.hr-fancy {
+    position: relative;
+    margin-bottom: 1.3em;
+    padding: 5% 0;
+
+    .hr-arrows {
+        z-index: 1;
+        display: inline;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5%;
+
+        background: url(../images/arrows-black.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% auto;
+    }
+
+    .hr-mask {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5% 8%;
+
+        background-color: white;
+    }
+
+    .hr-line { 
+        height: 1px;
+
+        border: 0; 
+        background-image: linear-gradient(right, #f0f0f0, #8c8b8b, #f0f0f0);
+    }
+}

@@ -1,0 +1,1756 @@
+/*--------------------------------------------------------------
+Site Name: Propeller Communications Demo
+Author: Razvan Negrea
+
+MAIN STYLESHEET
+
+#Mobile First Method
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+#IMPORTS
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong,
+.strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn,
+em,
+.em {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/*
+ * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
+*/
+p {
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto; }
+
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+pre {
+  margin: 0; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+small, .small {
+  font-size: 75%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+  Lists
+========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+dd {
+  margin: 0; }
+
+/*
+ * Addresses paddings set differently in IE6/7.
+ */
+menu {
+  padding: 0 0 0 40px; }
+
+ol,
+ul {
+  padding: 0;
+  list-style-type: none; }
+
+/*
+ * Corrects list images handled incorrectly in IE7.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* ==========================================================================
+  Embedded content
+========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"], input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.image-replacement,
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.clearfix, .cf {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after, .cf:before, .cf:after {
+    content: "";
+    display: table; }
+  .clearfix:after, .cf:after {
+    clear: both; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.logo a {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+
+.logo img, ul.carousel-controls li a {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.modal .modal-inner {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+/*--------------------------------------------------------------
+
+#LAYOUTS
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+##Grid
+--------------------------------------------------------------*/
+[class*='col-'] {
+  float: left;
+  padding: 0 10px; }
+  .grid [class*='col-']:last-of-type {
+    padding-right: 0; }
+
+/* Opt-in outside padding */
+.grid-padding {
+  padding: 20px 0 20px 20px; }
+  .grid-padding [class*='col-']:last-of-type {
+    padding: 0 10px; }
+
+.col-1-1, .col-1-3, .col-1-4, .col-1-8 {
+  width: 100%;
+  padding: 0; }
+
+.col-1-2 {
+  width: 50%; }
+
+.col-1-3, .col-1-4, .col-1-8 {
+  width: 100%;
+  padding: 0; }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 992px) {
+  .col-2-3 {
+    width: 66.66%; }
+  .col-1-3 {
+    width: 33.33%; }
+  .col-1-4 {
+    width: 25%; }
+  .col-1-8 {
+    width: 12.5%; } }
+
+/*--------------------------------------------------------------
+#MODULES
+--------------------------------------------------------------*/
+/* Buttons and inputs */
+/*--------------------------------------------------------------
+
+#BUTTONS
+
+--------------------------------------------------------------*/
+a:focus,
+.btn, button, button:focus, .btn:focus,
+input, input:focus {
+  outline: 0 !important; }
+
+button::-moz-focus-inner {
+  border: 0; }
+
+input[type="email"]:focus {
+  box-shadow: none; }
+
+/* General button style (reset) */
+.btn {
+  display: inline-block;
+  position: relative;
+  width: 19rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  margin: 2rem 0;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: 'Lato', helvetica, arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-clip: padding-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  zoom: 1;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.25s ease-out;
+          transition: all 0.25s ease-out; }
+
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.25s;
+          transition: all 0.25s; }
+
+.btn-ghost {
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden; }
+
+.btn-ghost:after {
+  width: 100%;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%); }
+
+.btn-ghost:hover {
+  color: #1F1F1F; }
+
+.btn-ghost:hover:after {
+  height: 60%;
+  opacity: 1; }
+
+.btn-ghost:active {
+  color: #fff; }
+
+.btn-ghost:active:after {
+  height: 120%;
+  opacity: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2); }
+
+/* Form styles */
+/*--------------------------------------------------------------
+
+#FORMS
+
+--------------------------------------------------------------*/
+#subscribe-form {
+  padding-top: 5%; }
+
+.input-wrapper {
+  width: 100%;
+  margin: 10px auto;
+  padding: 5px 10% 5px 10%;
+  border: 1px solid #fff;
+  text-align: left; }
+  .input-wrapper label,
+  .input-wrapper input {
+    width: 100%;
+    font-size: 1.375em; }
+  .input-wrapper label {
+    font-style: italic; }
+  .input-wrapper input {
+    font-family: 'Lato', helvetica, arial, sans-serif;
+    font-size: 1.3em;
+    color: #fff; }
+  .input-wrapper.birthday .field-1-2:after {
+    display: inline;
+    float: right;
+    margin-right: 20%;
+    font-size: 1.2em;
+    content: "\25BC";
+    -webkit-transition: all 0.1s ease-out;
+            transition: all 0.1s ease-out; }
+  .input-wrapper.birthday .field-1-2.active:after {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg); }
+
+input, input[type="password"], input[type="search"] {
+  border: 0;
+  background: transparent; }
+
+input[type="number"] {
+  width: 50%; }
+
+.field-row {
+  overflow: hidden; }
+
+.field-row label {
+  display: block;
+  width: 30%;
+  float: left; }
+
+.field-row .field-container {
+  width: 50%;
+  float: left; }
+
+.field-1-1 {
+  float: left;
+  width: 100%; }
+
+.field-1-2 {
+  float: left;
+  width: 50%; }
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
+::-webkit-input-placeholder {
+  font-family: 'Vollkorn', garamond, arial, serif;
+  font-style: italic; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: 'Vollkorn', garamond, arial, serif;
+  font-style: italic; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: 'Vollkorn', garamond, arial, serif;
+  font-style: italic; }
+
+:-ms-input-placeholder {
+  font-family: 'Vollkorn', garamond, arial, serif;
+  font-style: italic; }
+
+.v-separator {
+  float: left;
+  height: 1.3em;
+  width: 10%;
+  border-left: 1px solid #b4b4b4;
+  padding: 0;
+  font-size: 1.3em;
+  content: ""; }
+
+/*--------------------------------------------------------------
+##Form validation status
+--------------------------------------------------------------*/
+.field-row:after {
+  display: inline;
+  float: right;
+  font-family: FontAwesome;
+  font-size: 1.375em; }
+
+.field-row.success:after {
+  content: "\f00c";
+  color: #7EB62E; }
+
+.field-row.error:after {
+  content: "\f00d";
+  color: #F6372F; }
+
+.field-row.warning:after {
+  content: "\f071";
+  color: #f6ca2f; }
+
+/*--------------------------------------------------------------
+#BREAKPOINTS
+--------------------------------------------------------------*/
+/* Main mobile styles */
+/*
+Project Name: Propeller Communications - Demo
+Author: Razvan Negrea
+Author URI: http://www.rznart.com
+Description: Start your engines!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# GENERAL STYLES
+# FONT STYLES
+  ## Main Styles
+  ## Link Styles
+# CONTAINERS
+# PRELOADER
+# HEADER
+  ## Navigation
+# CONTENT
+  ## Social Media
+  ## Restaurant CTAs
+  ## Carousel
+  ## Connect
+# FOOTER
+# PAGES
+  ## Thank you page
+# CLEARINGS
+# ACCESSIBILITY
+# MISC
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+
+#GENERAL STYLES
+
+--------------------------------------------------------------*/
+* {
+  padding: 0;
+  margin: 0; }
+
+html, body {
+  min-height: 100% !important;
+  height: 100%;
+  width: 100%;
+  color: #1F1F1F; }
+
+dl, menu, ol, ul {
+  margin: 0; }
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  overflow-x: hidden; }
+
+li {
+  list-style-type: none; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100rem white inset; }
+
+/*** Change default text highlight ***/
+/* IE9  - Also picked up by most modern browsers */
+*::-moz-selection {
+  background: #4cc0bf;
+  color: #FFF;
+  text-shadow: none; }
+*::selection {
+  background: #4cc0bf;
+  color: #FFF;
+  text-shadow: none; }
+
+/* Safari & Chrome - Webkit Rendering */
+*::-webkit-selection {
+  background: #4cc0bf;
+  color: #FFF;
+  text-shadow: none; }
+
+/* Mozilla based - Gecko Rendering */
+*::-moz-selection {
+  background: #4cc0bf;
+  color: #FFF;
+  text-shadow: none; }
+
+/*--------------------------------------------------------------
+
+#FONT STYLES
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+##Main Styles
+--------------------------------------------------------------*/
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 62.5%;
+  -ms-text-size-adjust: 62.5%;
+  font-family: sans-serif; }
+
+body {
+  font-size: 1.2rem; }
+
+body {
+  background-color: white;
+  font-family: 'Vollkorn', garamond, arial, serif;
+  font-weight: 400;
+  line-height: 1.45; }
+
+p {
+  margin-bottom: 1.3em;
+  font-size: 1.25em;
+  font-style: italic; }
+
+.align-left {
+  text-align: left; }
+
+.align-right {
+  text-align: right; }
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-family: 'Lato', helvetica, arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase; }
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em; }
+
+h2 {
+  font-size: 2.827em; }
+
+h3 {
+  font-size: 1.999em; }
+
+h4 {
+  font-size: 1.414em; }
+
+.font-large {
+  font-size: 1.375em; }
+
+small, .font-small {
+  font-size: 0.707em; }
+
+hr {
+  margin: 10px 0; }
+
+/*--------------------------------------------------------------
+##Link Styles
+--------------------------------------------------------------*/
+a {
+  color: #fff; }
+
+/*--------------------------------------------------------------
+
+#CONTAINERS
+
+--------------------------------------------------------------*/
+#main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+
+/*--------------------------------------------------------------
+
+#PRELOADER
+
+--------------------------------------------------------------*/
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden; }
+  .modal .modal-inner {
+    position: relative;
+    text-align: center; }
+    .modal .modal-inner .pre-phase {
+      display: none; }
+      .modal .modal-inner .pre-phase span {
+        opacity: 0;
+        font-size: 1.75em;
+        font-style: italic; }
+      .modal .modal-inner .pre-phase .countdown, .modal .modal-inner .pre-phase .ellipsis {
+        display: inline; }
+
+.propeller {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40%;
+  padding: 40%;
+  opacity: 0.2;
+  box-sizing: border-box;
+  background: url(../images/propeller-outline.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto; }
+
+#pre-skip {
+  display: block;
+  position: fixed;
+  bottom: 1%;
+  left: 0;
+  width: 100%;
+  padding: 2%;
+  text-align: center; }
+  #pre-skip a {
+    display: inline;
+    width: 50%;
+    padding: 2.5% 5%;
+    color: #ccc;
+    font-style: italic;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out; }
+    #pre-skip a:hover {
+      color: #DAA520; }
+
+/*--------------------------------------------------------------
+
+#HEADER
+
+--------------------------------------------------------------*/
+header {
+  z-index: 1000;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  background-color: #1F1F1F; }
+  header img {
+    height: 35px; }
+
+.logo {
+  display: inline-block;
+  float: left;
+  height: 100%; }
+  .logo a {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    text-decoration: none; }
+  .logo img {
+    position: relative; }
+  .logo span {
+    display: inline-block;
+    vertical-align: middle;
+    height: 35px;
+    margin-top: -10px;
+    padding: 0 10px;
+    color: #fff;
+    font-family: 'Lato', helvetica, arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.6em; }
+
+/*--------------------------------------------------------------
+##Navigation
+--------------------------------------------------------------*/
+nav {
+  display: inline-block;
+  float: right !important;
+  min-height: 45px; }
+  nav a {
+    color: #DAA520; }
+    nav a:hover {
+      color: #fff;
+      background: #DAA520; }
+  nav li {
+    z-index: 1000;
+    display: block; }
+  nav ul {
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  list-style: none;
+  *zoom: 1;
+  /* fix for IE 6-8 not toggling button */ }
+
+.nav a {
+  padding: 20px;
+  font-family: 'Lato', helvetica, arial, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  *zoom: 1; }
+
+.nav ul {
+  display: none;
+  position: absolute;
+  width: 100%; }
+
+.nav li ul {
+  top: 0;
+  left: 100%; }
+
+.nav li ul li ul {
+  left: 100%; }
+
+.nav li a {
+  display: block; }
+
+.nav li li a {
+  z-index: 100;
+  position: relative;
+  border-top: 1px solid #DAA520; }
+
+.nav li > a.parent:after {
+  float: right;
+  font-family: FontAwesome;
+  content: '\f054'; }
+
+.nav li > a.parent:hover:after {
+  font-family: FontAwesome;
+  content: '\f054'; }
+
+.nav li > a.parent:only-child:after {
+  content: ''; }
+
+#btn-toggle {
+  display: inline-block;
+  float: right;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 2em;
+  text-decoration: none; }
+
+.nav li.back {
+  text-align: center; }
+  .nav li.back > a {
+    font-weight: bold; }
+  .nav li.back > a:after {
+    font-family: FontAwesome;
+    content: '\f053';
+    float: left; }
+
+#content-darken {
+  z-index: 998;
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25); }
+
+/*--------------------------------------------------------------
+
+#CONTENT
+
+--------------------------------------------------------------*/
+#main-bg {
+  z-index: -1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: url(../images/bg-x1200-restaurant-tables.jpg) center center no-repeat fixed;
+  background-size: cover; }
+
+#main-content {
+  background-color: #fff;
+  text-align: center; }
+
+.lead {
+  padding: 5%; }
+  .lead h2 {
+    padding: 5% 0; }
+
+/*--------------------------------------------------------------
+##Social Media
+--------------------------------------------------------------*/
+.social-links {
+  display: inline-block; }
+
+.social-links.social-large-devices {
+  display: none; }
+
+.social-links {
+  width: 100%;
+  padding: 5%;
+  text-align: center; }
+  .social-links a {
+    text-decoration: none; }
+  .social-links.social-header {
+    margin-top: 45px; }
+  .social-links.social-footer {
+    background-color: #1F1F1F; }
+  .social-links .social-icon {
+    float: none; }
+    .social-links .social-icon > img {
+      max-width: 15%; }
+
+.social-icon {
+  padding: 0 10px; }
+
+.social-icon .icon-circle {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  line-height: 44px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-transition: background 0.2s, color 0.2s;
+          transition: background 0.2s, color 0.2s; }
+  .social-icon .icon-circle .fa {
+    font-size: 28px;
+    line-height: inherit; }
+  .social-icon .icon-circle:hover {
+    border-color: #deae36;
+    background-color: #deae36; }
+    .social-icon .icon-circle:hover .fa {
+      color: #fff; }
+  .social-icon .icon-circle:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    box-sizing: content-box;
+    top: -7px;
+    left: -7px;
+    padding: 7px;
+    top: 0;
+    left: 0;
+    padding: 0;
+    border-color: #deae36;
+    box-shadow: 0 0 0 4px #deae36;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+            transform: scale(1.3);
+    opacity: 0; }
+  .social-icon .icon-circle:hover:after {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
+
+/*--------------------------------------------------------------
+##Restaurant CTAs
+--------------------------------------------------------------*/
+.restaurant-discover {
+  overflow: auto; }
+  .restaurant-discover .col-1-4 {
+    float: left;
+    position: relative;
+    width: 50%;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box; }
+    .restaurant-discover .col-1-4 a {
+      text-decoration: none; }
+  .restaurant-discover .cta-bg {
+    padding: 50%;
+    -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out; }
+    .restaurant-discover .cta-bg:hover {
+      background-size: 110% !important; }
+  .restaurant-discover .col-1-4:nth-child(1) a .cta-bg {
+    background: url(../images/cta-table.jpg) center center no-repeat;
+    background-size: 100%; }
+  .restaurant-discover .col-1-4:nth-child(2) a .cta-bg {
+    background: url(../images/cta-chips-and-sub.jpg) center center no-repeat;
+    background-size: 100%; }
+  .restaurant-discover .col-1-4:nth-child(3) a .cta-bg {
+    background: url(../images/cta-liquor-glass.jpg) center center no-repeat;
+    background-size: 100%; }
+  .restaurant-discover .col-1-4:nth-child(4) a .cta-bg {
+    background: url(../images/cta-coffee-and-sugar-jar.jpg) center center no-repeat;
+    background-size: 100%; }
+  .restaurant-discover .cta-wrapper {
+    position: absolute;
+    width: 75%; }
+    .restaurant-discover .cta-wrapper img {
+      height: 25%;
+      width: 40%; }
+
+/*--------------------------------------------------------------
+##Carousel
+--------------------------------------------------------------*/
+ul.carousel {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: none; }
+
+li.carousel-slide {
+  position: absolute;
+  display: none; }
+
+ul.carousel li {
+  width: 100%;
+  background-size: 100% auto !important; }
+  ul.carousel li:nth-child(2) {
+    background: url(../images/carousel-x1200-thank-you.jpg) center center no-repeat; }
+  ul.carousel li:nth-child(3) {
+    background: url(../images/carousel-x1200-london-england-great-britain.jpg) bottom center no-repeat; }
+  ul.carousel li:nth-child(4) {
+    background: url(../images/carousel-x1200-flower-rich-restaurant.jpg) bottom center no-repeat; }
+  ul.carousel li:nth-child(5) {
+    background: url(../images/carousel-x1200-restaurant-tables-with-sea-view.jpg) center no-repeat; }
+  ul.carousel li:nth-child(6) {
+    background: url(../images/carousel-x1200-dining-table.jpg) center center no-repeat; }
+  ul.carousel li:nth-child(7) {
+    background: url(../images/carousel-x1200-restaurant-at-night.jpg) center center no-repeat; }
+  ul.carousel li:nth-child(8) {
+    background: url(../images/carousel-x1200-glasses-restaurant.jpg) center center no-repeat; }
+
+/* Controls */
+ul.carousel-controls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 9999; }
+
+ul.carousel-controls li a {
+  z-index: 1;
+  display: block;
+  position: absolute;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #000;
+  text-decoration: none;
+  font-size: 1.375em;
+  line-height: 1;
+  -webkit-transition: background 0.2s ease-in-out;
+          transition: background 0.2s ease-in-out; }
+  ul.carousel-controls li a:hover {
+    background: white; }
+
+ul.carousel-controls li.carousel-next a {
+  right: 2%; }
+
+ul.carousel-controls li.carousel-prev a {
+  left: 2%; }
+
+/* Indicators */
+ol.carousel-indicators {
+  z-index: 1;
+  position: absolute;
+  bottom: 5%;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  text-align: center; }
+
+ol.carousel-indicators li {
+  display: inline; }
+  ol.carousel-indicators li a {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 5px;
+    background: #fff;
+    text-decoration: none;
+    -webkit-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out; }
+    ol.carousel-indicators li a:hover {
+      background: #DAA520; }
+    ol.carousel-indicators li a:active {
+      background: #a7781d; }
+  ol.carousel-indicators li.active-marker a {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+
+/*--------------------------------------------------------------
+#CONNECT
+--------------------------------------------------------------*/
+#connect {
+  position: relative;
+  overflow: auto;
+  color: #fff; }
+  #connect .row {
+    z-index: 10;
+    position: relative; }
+    #connect .row .cta {
+      padding: 0 10px; }
+      #connect .row .cta .cta-wrapper {
+        max-width: 300px;
+        margin: 0 auto; }
+        #connect .row .cta .cta-wrapper p.font-large {
+          margin: 0; }
+      #connect .row .cta.instagram img {
+        max-width: 100%;
+        max-height: 100%; }
+      #connect .row .cta.instagram .col-1-2:nth-child(1) {
+        padding-left: 0; }
+      #connect .row .cta.instagram .col-1-2:nth-child(2) {
+        padding-right: 0; }
+
+/*--------------------------------------------------------------
+
+#FOOTER
+
+--------------------------------------------------------------*/
+footer {
+  margin-top: 5%;
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Lato', helvetica, arial, sans-serif; }
+  footer .footer-wrapper {
+    padding: 5% 10%; }
+  footer .footer-wrapper li {
+    text-align: center;
+    text-decoration: none; }
+    footer .footer-wrapper li:nth-child(1) {
+      padding-bottom: 1%;
+      font-size: 1.375em;
+      font-weight: bold; }
+  footer .back-to-top {
+    padding: 5% 0;
+    background-color: #282828;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold; }
+    footer .back-to-top a {
+      text-decoration: none; }
+
+.squiggle.large {
+  display: none; }
+
+/*--------------------------------------------------------------
+
+#PAGES
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+#Thank you page
+--------------------------------------------------------------*/
+body.thank-you #main-content {
+  margin-bottom: 10%; }
+  body.thank-you #main-content a {
+    color: #1F1F1F; }
+    body.thank-you #main-content a:hover {
+      color: #DAA520; }
+    body.thank-you #main-content a.btn-ghost {
+      border-color: #1F1F1F; }
+  body.thank-you #main-content .offer {
+    position: relative;
+    margin-bottom: 1.3em;
+    width: 100%;
+    padding: 34% 50%;
+    background: url(../images/offer-wine-bottles.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto; }
+    body.thank-you #main-content .offer .offer-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.7); }
+      body.thank-you #main-content .offer .offer-wrapper p {
+        color: #574835;
+        margin: 0; }
+        body.thank-you #main-content .offer .offer-wrapper p.offer-date {
+          padding-top: 2%;
+          font-family: 'Lato', helvetica, arial, sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 1.25em; }
+        body.thank-you #main-content .offer .offer-wrapper p.offer-cta {
+          padding: 2%; }
+  body.thank-you #main-content ul.cta-list {
+    padding-bottom: 5%; }
+    body.thank-you #main-content ul.cta-list li.cta {
+      display: inline; }
+      body.thank-you #main-content ul.cta-list li.cta a {
+        padding: 0 2%;
+        font-size: 1.25em;
+        font-style: normal;
+        font-family: 'Lato', helvetica, arial, sans-serif; }
+
+/*--------------------------------------------------------------
+
+#CLEARINGS
+
+--------------------------------------------------------------*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/*--------------------------------------------------------------
+
+#ACCESSIBILITY
+
+--------------------------------------------------------------*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+/*--------------------------------------------------------------
+
+#MISC
+
+--------------------------------------------------------------*/
+.center {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.text-center {
+  text-align: center !important; }
+
+.tint:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: none;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+
+.tint:before {
+  background: rgba(0, 0, 0, 0.7); }
+
+.hr-fancy {
+  position: relative;
+  margin-bottom: 1.3em;
+  padding: 5% 0; }
+  .hr-fancy .hr-arrows {
+    z-index: 1;
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 5%;
+    background: url(../images/arrows-black.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto; }
+  .hr-fancy .hr-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 5% 8%;
+    background-color: white; }
+  .hr-fancy .hr-line {
+    height: 1px;
+    border: 0;
+    background-image: -webkit-linear-gradient(right, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: linear-gradient(right, #f0f0f0, #8c8b8b, #f0f0f0); }
+
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  /* Extra Small Devices, Phones */
+  #connect .instagram .row {
+    width: 75%;
+    margin: 0 auto; }
+  #subscribe-form .input-wrapper .field-container {
+    width: 45%; }
+    #subscribe-form .input-wrapper .field-container .field-1-2:after {
+      margin-right: 20%; } }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  /* Small Devices, Tablets */
+  #connect .instagram .row {
+    width: 50%; }
+  .restaurant-discover .col-1-4 {
+    width: 25%; } }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  /* Medium Devices, Desktops */
+  #btn-toggle,
+  #content-darken,
+  .back-to-top,
+  .social-links.social-mobile.social-footer {
+    display: none; }
+  .modal .modal-inner span {
+    font-size: 4.4em; }
+  .modal .propeller {
+    width: 20%;
+    padding: 20%; }
+  .modal #pre-skip {
+    font-size: 1.4em; }
+  body {
+    font-size: 1.4rem; }
+  /* We can now lighten up the background a bit to compensate
+with the implementation of the diagonal pattern on high res devices */
+  #main-bg.tint:before {
+    background: rgba(0, 0, 0, 0.6); }
+  #main-bg:after {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    background-image: -webkit-repeating-linear-gradient(315deg, rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0.5) 1px, transparent 2px, transparent 2px, rgba(128, 128, 128, 0.5) 3px);
+    background-image: repeating-linear-gradient(135deg, rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0.5) 1px, transparent 2px, transparent 2px, rgba(128, 128, 128, 0.5) 3px);
+    background-size: 4px 4px; }
+  /* Header */
+  header {
+    position: relative;
+    height: auto;
+    background: none; }
+  .logo {
+    display: block;
+    float: none;
+    padding: 5% 0 3% 0;
+    height: auto;
+    width: auto; }
+    .logo img {
+      position: relative;
+      top: auto;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
+      height: auto;
+      max-width: 75%; }
+    .logo span {
+      display: none; }
+  /* Navigation */
+  nav {
+    display: block;
+    float: none !important;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out; }
+  nav a {
+    color: #fff; }
+  nav.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+    nav.affix .nav li a {
+      color: #1F1F1F; }
+  .nav {
+    display: block !important;
+    position: relative;
+    left: 0 !important;
+    top: auto;
+    box-shadow: none;
+    text-align: center;
+    background: none; }
+  .nav li {
+    display: inline-block;
+    position: relative;
+    float: none; }
+  .nav li ul {
+    display: none;
+    top: auto;
+    left: 0;
+    width: 180px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+  .nav li.hover ul {
+    display: block; }
+  .nav li ul li {
+    display: block;
+    text-align: left; }
+  .nav li ul li ul {
+    top: 0;
+    left: 100%; }
+  .nav li.hover ul li ul {
+    display: none;
+    top: 0;
+    left: 100%; }
+  .nav li.hover ul li.hover ul {
+    display: block; }
+  /* Misc nav */
+  .nav li .back {
+    display: none; }
+  .nav li ul li a {
+    padding: 10px 20px;
+    font-size: 0.875em; }
+  .nav li a {
+    background: none; }
+  .nav li:hover {
+    background: transparent; }
+  .nav li.hover a:hover {
+    color: #DAA520; }
+  .nav li li a,
+  .nav li li li a {
+    z-index: 100;
+    display: block;
+    background-color: #fff;
+    position: relative;
+    border-top: 1px solid #DAA520;
+    border-top: none;
+    color: #1F1F1F; }
+  .nav li > a.parent:after,
+  .nav li > a.parent:hover:after {
+    padding-left: 5px;
+    content: '\f078'; }
+  .nav li li a.parent:after,
+  .nav li li a.parent:hover:after {
+    content: '\f054'; }
+  /* END navigation */
+  .lead {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto; }
+    .lead h3 {
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto; }
+  .restaurant-discover .btn-cta {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out; }
+    .restaurant-discover .btn-cta:hover {
+      opacity: 1; }
+    .restaurant-discover .btn-cta .cta-wrapper {
+      width: 50%; }
+  #connect .instagram .row {
+    width: 100%; }
+  #subscribe-form {
+    padding-top: 50px; }
+    #subscribe-form .input-wrapper label {
+      width: 35%; }
+    #subscribe-form .input-wrapper .field-container {
+      width: 45%; }
+      #subscribe-form .input-wrapper .field-container .field-1-2:after {
+        margin-right: 10%; }
+  footer {
+    max-width: 95%;
+    margin: 0 auto;
+    padding-bottom: 2%;
+    border-top: 3px double #fff;
+    text-align: center; }
+    footer .footer-wrapper ul li {
+      display: inline-block;
+      padding: 0 1%;
+      border-right: 1px solid #fff;
+      line-height: 1;
+      font-size: 0.875em; }
+      footer .footer-wrapper ul li:nth-child(1) {
+        padding-bottom: 0;
+        font-size: initial;
+        font-weight: normal; }
+      footer .footer-wrapper ul li:nth-last-child(1) {
+        border: none; }
+    footer .footer-wrapper {
+      padding: 2% 0 2% 0; }
+    footer .squiggle.mobile {
+      display: none; }
+    footer .squiggle.large {
+      display: inline-block; }
+  /* Social */
+  .social-links.social-header {
+    margin-top: 0;
+    padding: 2.5% 0 5% 0; }
+    .social-links.social-header img {
+      max-height: 48px; }
+  .social-links.social-links.social-large-devices {
+    display: inline-block;
+    width: auto;
+    padding: 0 1%; }
+    .social-links.social-links.social-large-devices a.social-icon {
+      padding: 0;
+      text-decoration: none; }
+      .social-links.social-links.social-large-devices a.social-icon .fa {
+        font-size: 1.2em; }
+  .social-links a .fa {
+    padding: 0 10px;
+    color: #fff;
+    -webkit-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out; }
+    .social-links a .fa:hover {
+      color: #DAA520; } }
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  /* Large Devices, Wide Screens */
+  body {
+    font-size: 1.6rem; }
+  h3 {
+    font-size: 2.4em; }
+  .logo {
+    padding: 10% 0 5% 0; }
+    .logo img {
+      max-width: 280px; }
+  .social-links.social-header {
+    margin-top: 0;
+    padding: 5% 0 10% 0; }
+  #subscribe-form {
+    padding-top: 10px; }
+  .modal .modal-inner .pre-phase span {
+    font-size: 3em; } }

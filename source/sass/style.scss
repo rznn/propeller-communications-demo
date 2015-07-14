@@ -1,0 +1,87 @@
+
+/*--------------------------------------------------------------
+Site Name: Propeller Communications Demo
+Author: Razvan Negrea
+
+MAIN STYLESHEET
+
+#Mobile First Method
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+#IMPORTS
+--------------------------------------------------------------*/
+
+@import "bourbon";
+@import "neat";
+
+// normalize: http://necolas.github.io/normalize.css/
+@import "partials/normalize";
+
+// Sass variables
+@import "partials/variables";
+
+// The grid
+@import "partials/grid";
+
+
+/*--------------------------------------------------------------
+#MODULES
+--------------------------------------------------------------*/
+
+/* Buttons and inputs */ 
+@import "modules/buttons";
+
+/* Form styles */ 
+@import "modules/forms";
+
+/*--------------------------------------------------------------
+#BREAKPOINTS
+--------------------------------------------------------------*/
+
+/* Main mobile styles */ 
+// styles in main.scss
+@import "breakpoints/main";
+
+// Breakpoints
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width: 320px) {
+
+    // styles in 320up.scss
+    @import "breakpoints/320up";
+
+} // end of media query
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width: 480px) {
+
+    // styles in 480up.scss
+    @import "breakpoints/480up";
+
+} // end of media query
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+
+    // styles in 768up.scss
+    @import "breakpoints/768up";
+
+} // end of media query
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+
+    // styles in 992up.scss
+    @import "breakpoints/992up";
+
+} // end of media query
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+
+    // styles in 1200up.scs
+    @import "breakpoints/1200up";
+
+} // end of media query

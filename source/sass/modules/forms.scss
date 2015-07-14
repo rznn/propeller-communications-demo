@@ -1,0 +1,151 @@
+
+/*--------------------------------------------------------------
+
+#FORMS
+
+--------------------------------------------------------------*/
+
+#subscribe-form { padding-top: 5%; }
+
+.input-wrapper {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px 10% 5px 10%;
+
+    border: 1px solid #fff;
+    text-align: left;
+
+    label,
+    input {
+        width: 100%;
+        font-size: 1.375em;
+    }
+
+    label { font-style: italic; }
+
+    input {
+        font-family: 'Lato', helvetica, arial, sans-serif;
+        font-size: 1.3em;
+        color: #fff;
+    }
+
+    // Active field indicators
+    &.birthday .field-1-2 {
+        &:after {
+            display: inline;
+            float: right;
+            margin-right: 20%;
+            font-size: 1.2em;
+            content: "\25BC";
+
+            transition: all 0.1s ease-out;
+        }
+
+        &.active:after {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+input, input[type="password"], input[type="search"] {
+    border: 0;
+    background: transparent;
+}
+
+input[type="number"] {
+   width:50%;
+}
+
+.field-row {
+  overflow: hidden;
+}
+
+.field-row label {
+  display: block;
+  width: 30%;
+  float: left;
+}
+
+.field-row .field-container {
+  width: 50%;
+  float: left;
+}
+
+.field-1-1 {
+    float: left;
+    width: 100%;
+}
+
+.field-1-2 {
+    float: left;
+    width: 50%;
+}
+
+// Hide spinner
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+// Placeholder styles
+::-webkit-input-placeholder {   
+    font-family: 'Vollkorn', garamond, arial, serif;
+    font-style: italic;
+}
+:-moz-placeholder { /* Firefox 18- */   
+    font-family: 'Vollkorn', garamond, arial, serif;
+    font-style: italic;  
+}
+::-moz-placeholder {  /* Firefox 19+ */   
+    font-family: 'Vollkorn', garamond, arial, serif;
+    font-style: italic;  
+}
+:-ms-input-placeholder {     
+    font-family: 'Vollkorn', garamond, arial, serif;
+    font-style: italic;  
+}
+
+// Separator for the label and fields
+.v-separator {
+    float: left;
+    height: 1.3em;
+    width: 10%;
+    border-left: 1px solid #b4b4b4;
+    padding: 0;
+    font-size: 1.3em;
+    content: "";
+}
+
+/*--------------------------------------------------------------
+##Form validation status
+--------------------------------------------------------------*/
+
+.field-row {
+
+    &:after {
+        display: inline;
+        float: right;
+        font-family: FontAwesome;
+        font-size: 1.375em;
+    }
+    
+    &.success:after {
+        content: "\f00c";
+        color: $success;
+    }
+
+    &.error:after {
+        content: "\f00d";
+        color: $error;
+    }
+
+    &.warning:after {
+        content: "\f071";
+        color: $warning;
+    }
+}
